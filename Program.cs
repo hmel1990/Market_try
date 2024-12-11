@@ -6,7 +6,6 @@ namespace Market_try
         {
            
             User user = new User();
-            user.CheckLoginPassword();
         }
     }
 }

@@ -47,6 +47,8 @@ namespace Market_try
             {
                 this.data.Add(new LoginPassword(lines[i]));
             }
+
+            CheckLoginPassword();
         }
 
         public void CheckLoginPassword()
