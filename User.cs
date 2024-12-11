@@ -8,9 +8,11 @@ namespace Market_try
 {
     internal class User
     {
-        private int id = 0;
-        private string login;
-        private string password;
+        //private int id = 0;
+        //private string login;
+        //private string password;
+
+        private LoginPassword l_p = new LoginPassword();
 
         private List<LoginPassword> data = new List<LoginPassword>();
 
@@ -18,18 +20,18 @@ namespace Market_try
         {
             Console.WriteLine("Введите Логин");
             string login = Console.ReadLine();
-            this.login = login;
+            l_p.login = login;
         }
 
         public void passwordSetter()
         {
             Console.WriteLine("Введите Пароль");
             string password = Console.ReadLine();
-            this.password = password;
+            l_p.password = password;
         }
 
         public User ()
-        {
+        {            
             loginSetter();
             passwordSetter();
             // Считываем все строки из файла
@@ -56,13 +58,13 @@ namespace Market_try
 
             foreach (LoginPassword lp in data) 
             {
-                if (lp.login == this.login && lp.password == this.password)
+                if (lp.login == l_p.login && lp.password == l_p.password)
                 {
-                    this.id = lp.id;
+                    l_p.id = lp.id;
                     Console.WriteLine("Все ОК!!!");
                 }
             }
-            if (id == 0)
+            if (l_p.id == 0)
             {
                 Console.WriteLine("Логин или пароль неверные");
                 throw new Exception();

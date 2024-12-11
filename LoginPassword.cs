@@ -18,5 +18,9 @@ namespace Market_try
             this.login = values[1];
             this.password = values[2];
         }
+        public LoginPassword()
+        {
+            id = 0;
+        }
     }
 }
